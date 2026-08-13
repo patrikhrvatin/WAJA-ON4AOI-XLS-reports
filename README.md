@@ -1,8 +1,4 @@
 # WAJA-ON4AOI-XLS-reports
-Worked All Japan prefectures XLS statistics
-To accompany your script, it is highly recommended to include a `README.md` file in your repository. This file serves as the "help" documentation that users will see when they visit your GitHub page.
-
-Below is a template you can copy, paste, and save as `README.md` in your project folder.
 
 ---
 
@@ -56,9 +52,4 @@ python your_script_name.py
 
 ---
 
-### How to add this to your project:
-
-1. Create a file named `README.md` in your project folder.
-2. Paste the content above into that file.
-3. Save it.
 4. Run `git add README.md` and `git commit -m "Added help documentation"` followed by `git push` to upload it to your GitHub repository.
