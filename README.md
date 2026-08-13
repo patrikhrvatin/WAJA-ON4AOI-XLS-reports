@@ -50,6 +50,3 @@ python your_script_name.py
 * **Missing Data?**: Ensure your ADIF file contains the `STATE` or `CNTY` field, as this is how the script identifies the JARL prefecture code.
 * **Encoding Errors**: The script uses `latin-1` to read ADIF files to ensure compatibility with most logging software exports. If you encounter encoding issues, ensure your exported ADIF file is saved correctly.
 
----
-
-4. Run `git add README.md` and `git commit -m "Added help documentation"` followed by `git push` to upload it to your GitHub repository.
