@@ -24,7 +24,7 @@ jobs:
     - name: Build with PyInstaller
       run: |
         # Zamenite 'vaseskripte.py' sa stvarnim imenom vašeg fajla
-        pyinstaller --onefile --name "WAJA_Processor" vaseskripte.py
+        pyinstaller --onefile --name "WAJA_Processor" WAJA_AOI_XLS.py
         
     - name: Upload EXE artifact
       uses: actions/upload-artifact@v4
