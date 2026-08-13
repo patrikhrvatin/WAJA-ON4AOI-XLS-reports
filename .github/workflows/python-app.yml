@@ -1,17 +1,12 @@
-name: Python Application CI
+name: Build and Package Python App
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Koristimo windows-latest jer pravimo .exe za Windows
 
     steps:
     - uses: actions/checkout@v4
@@ -24,10 +19,15 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pandas openpyxl
+        pip install pandas openpyxl pyinstaller
         
-    # Ovde možete dodati korak za pokretanje skripte, 
-    # ali imajte na umu da skripta treba lotwreport.adi fajl da bi radila.
-    # - name: Run the WAJA processor
-    #   run: |
-    #     python vase_ime_skripte.py
+    - name: Build with PyInstaller
+      run: |
+        # Zamenite 'vaseskripte.py' sa stvarnim imenom vašeg fajla
+        pyinstaller --onefile --name "WAJA_Processor" vaseskripte.py
+        
+    - name: Upload EXE artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: WAJA-Processor-EXE
+        path: dist/WAJA_Processor.exe
